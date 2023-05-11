@@ -1,7 +1,14 @@
+/**
+ * Author: Meng
+ * Date: 2023-05-09
+ * Desc: 
+ */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {RouterProvider} from 'react-router-dom';
+
 import './index.css';
-import App from './App';
+import routers from './routers';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -9,7 +16,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={routers} />
   </React.StrictMode>
 );
 

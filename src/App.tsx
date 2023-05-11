@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/**
+ * Author: Meng
+ * Date: 2023-05-09
+ * Desc:
+ */
+import React from "react";
+import { LiveComponent, HooksWidget } from "hooks-widget";
+import "./App.css";
+import AppLiveData from "./AppLiveData";
 
+let liveData: AppLiveData | null = null;
 function App() {
+  liveData = new AppLiveData();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LiveComponent liveData={liveData}>
+      <h1>sdfsdsads</h1>
+      <HooksWidget data={liveData?.curDate} child={dateView} />
+    </LiveComponent>
   );
+}
+
+function dateView(data: number) {
+  return <div onClick={liveData?.onUpdateDate}>{data}</div>;
 }
 
 export default App;

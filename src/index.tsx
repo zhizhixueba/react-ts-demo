@@ -1,21 +1,22 @@
 /**
  * Author: Meng
  * Date: 2023-05-09
- * Desc: 
+ * Desc:
  */
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {RouterProvider} from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 
-import './index.css';
-import routers from './routers';
-import reportWebVitals from './reportWebVitals';
+import "./index.css";
+import routers from "./routers";
+import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <div className="root-box" id="app"></div>
     <RouterProvider router={routers} />
   </React.StrictMode>
 );

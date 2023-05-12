@@ -9,8 +9,8 @@ import "./App.css";
 import AppLiveData from "./AppLiveData";
 
 let liveData: AppLiveData | null = null;
-function App() {
-  liveData = new AppLiveData();
+function App(props: any) {
+  liveData = new AppLiveData(props);
   return (
     <LiveComponent liveData={liveData}>
       <h1>sdfsdsads</h1>

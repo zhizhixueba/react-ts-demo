@@ -11,9 +11,10 @@ import { test } from "./modules/apis/index";
 export default class AppLiveData extends LiveData {
   public curDate = new Observer<number>(Date.now());
 
-  onCreate() {
-    test();
+  onLoad() {
+    console.log("----------->", this.props);
   }
+
   onUpdateDate = () => {
     test();
     this.curDate.next(Date.now());

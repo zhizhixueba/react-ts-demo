@@ -7,7 +7,7 @@ import React from 'react';
 
 export function HomePage() {
   return (
-    <div className="account">
+    <div className="page home">
       <h1>这是首页</h1>
     </div>
   );

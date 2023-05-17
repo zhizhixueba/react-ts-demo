@@ -4,18 +4,24 @@
  * Desc:
  */
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { LiveComponent, HooksWidget } from "hooks-widget";
-import HeaderBar from "../../../components/header/HeaderBar";
 import HomeLiveData from "./HomeLiveData";
 import "./Home.scss";
 
 let liveData: HomeLiveData | null = null;
 
 export function HomePage(props: any) {
+
+  let location = useLocation();
+
+  React.useEffect(() => {
+    console.log('------> ', location)
+  }, [location]);
+
   liveData = new HomeLiveData(props);
   return (
     <LiveComponent liveData={liveData}>
-      <HeaderBar />
       <HooksWidget data={liveData?.curDate} child={dateView} />
     </LiveComponent>
   );

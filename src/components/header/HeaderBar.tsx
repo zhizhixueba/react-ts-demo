@@ -4,8 +4,9 @@
  * Desc: 标题栏
  */
 
-import React from "react";
+// import React from "react";
 
+import Images from "../../assets/index";
 import "./HeaderBar.scss";
 
 type TabObj = { id: number; name: string; select: boolean };
@@ -28,7 +29,8 @@ function HeaderBar(props: any) {
 
   return (
     <div className="header">
-      <img className="button logo" />
+      <img className="button logo" src={Images.logo}/>
+      <div className="flex" />
       {tab_list.map(tabView)}
     </div>
   );

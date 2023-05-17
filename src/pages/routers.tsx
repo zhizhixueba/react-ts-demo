@@ -6,7 +6,7 @@
  */
 import { createBrowserRouter } from "react-router-dom";
 
-import App from "../App";
+// import App from "../App";
 import {
   LoginPage,
   RegisterPage,
@@ -22,12 +22,12 @@ const routers = createBrowserRouter([
   // { path: "/", element: <App /> },
   {
     path: "/",
-    element: <HomePage />,
+    element: <AuthRoute><HomePage /></AuthRoute>,
     children: [{ path: "detail", element: <DetailPage /> }],
   },
   {
     path: "account",
-    element: <AccountPage />,
+    element: <AuthRoute><AccountPage /></AuthRoute>,
     children: [
       { path: "login", element: <LoginPage /> },
       { path: "logout", element: <RegisterPage /> },
@@ -35,5 +35,13 @@ const routers = createBrowserRouter([
   },
   { path: "*", element: <NotFoundPage /> },
 ]);
+
+// 权限路由
+function AuthRoute({children}:any) {
+  console.log('AppRouter--->',children.type.name);
+  if(children) {
+    return children;
+  }
+}
 
 export default routers;

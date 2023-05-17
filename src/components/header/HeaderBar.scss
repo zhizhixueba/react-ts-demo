@@ -9,9 +9,10 @@
   .logo {
     width: 32px;
     height: 32px;
-    margin-right: 96px;
     border-radius: 50%;
-    background-color: white;
+  }
+  .flex {
+    flex: 1;
   }
   .tab {
     color: white;

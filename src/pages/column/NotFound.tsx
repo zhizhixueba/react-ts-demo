@@ -5,7 +5,7 @@
  */
 import React from 'react';
 
-function NotFound() {
+function NotFoundPage() {
   return (
     <div className="notfound">
       <h1>404</h1>
@@ -13,4 +13,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default NotFoundPage;

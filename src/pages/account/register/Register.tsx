@@ -5,7 +5,7 @@
  */
 import React from 'react';
 
-export function Register() {
+export function RegisterPage() {
   return (
     <div className="register">
       <h1>dengchu1</h1>

@@ -12,3 +12,6 @@ export * from './account/index/Account';
 // 顶部栏
 export * from './column/Contact';
 export * from './column/NotFound';
+// 首页相关
+export * from './home/index/Home';
+export * from './home/detail/Detail';

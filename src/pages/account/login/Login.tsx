@@ -5,7 +5,7 @@
  */
 import React from 'react';
 
-export function Login() {
+export function LoginPage() {
   return (
     <div className="login">
       <h1>登录</h1>

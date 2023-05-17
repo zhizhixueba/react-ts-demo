@@ -7,10 +7,10 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import App from "../App";
-import {Login, Register, Account} from "./index";
-import Contact from "./column/Contact";
-import Dashboard from "./column/Dashboard";
-import NotFound from "./column/NotFound";
+import {LoginPage, RegisterPage, AccountPage, HomePage, DetailPage} from "./index";
+// import ContactPage from "./column/Contact";
+// import DashboardPage from "./column/Dashboard";
+import NotFoundPage from "./column/NotFound";
 
 const routers = createBrowserRouter([
   {
@@ -18,12 +18,12 @@ const routers = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "contact",
-        element: <Contact />,
+        path: "home",
+        element: <HomePage />,
       },
       {
-        path: "dashboard",
-        element: <Dashboard />,
+        path: "detail",
+        element: <DetailPage />,
         // loader: ({ request }) =>
         // fetch("/api/dashboard.json", { signal: request.signal }),
       },
@@ -31,19 +31,19 @@ const routers = createBrowserRouter([
   },
   {
     path: "account",
-    element: <Account />,
+    element: <AccountPage />,
     children: [
       {
         path: "login",
-        element: <Login />,
+        element: <LoginPage />,
       },
       {
         path: "logout",
-        element: <Register />,
+        element: <RegisterPage />,
       },
     ],
   },
-  { path: "*", element: <NotFound /> },
+  { path: "*", element: <NotFoundPage /> },
 ]);
 
 export default routers;

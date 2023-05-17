@@ -6,7 +6,7 @@
 
 import { LiveData, Observer } from "hooks-widget";
 
-export default class RegisterLiveData extends LiveData {
+export default class DetailLiveData extends LiveData {
   public curDate = new Observer<number>(Date.now());
 
   onLoad() {

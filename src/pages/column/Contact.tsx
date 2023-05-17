@@ -5,11 +5,11 @@
  */
 import React from 'react';
 
-function Contact() {
+function ContactPage() {
   return (
     <div className="contact">
     </div>
   );
 }
 
-export default Contact;
+export default ContactPage;

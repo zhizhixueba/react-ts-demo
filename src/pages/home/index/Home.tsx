@@ -1,14 +1,14 @@
 /**
  * Author: Meng
- * Date: 2023-05-09
+ * Date: 2023-05-16
  * Desc: 
  */
 import React from 'react';
 
-export function AccountPage() {
+export function HomePage() {
   return (
     <div className="account">
-      <h1>账号</h1>
+      <h1>这是首页</h1>
     </div>
   );
 }

@@ -4,22 +4,22 @@
  * Desc:
  */
 import React from "react";
-import { LiveComponent, HooksWidget } from "hooks-widget";
-import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import { LiveComponent } from "hooks-widget";
+
+import routers from "./pages/routers";
+
 import AppLiveData from "./AppLiveData";
+import "./App.css";
 
 let liveData: AppLiveData | null = null;
 function App(props: any) {
   liveData = new AppLiveData(props);
   return (
     <LiveComponent liveData={liveData}>
-      <HooksWidget data={liveData?.curDate} child={dateView} />
+      <RouterProvider router={routers} />
     </LiveComponent>
   );
-}
-
-function dateView(data: number) {
-  return <div onClick={liveData?.onUpdateDate}>{data}</div>;
 }
 
 export default App;

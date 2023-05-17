@@ -4,13 +4,23 @@
  * Desc: 
  */
 import React from 'react';
+import { LiveComponent, HooksWidget } from "hooks-widget";
+import RegisterLiveData from "./RegisterLiveData";
 
-export function RegisterPage() {
+
+let liveData: RegisterLiveData | null = null;
+
+export function RegisterPage(props: any) {
+  liveData = new RegisterLiveData(props);
   return (
-    <div className="register">
-      <h1>dengchu1</h1>
-    </div>
+    <LiveComponent liveData={liveData}>
+      <HooksWidget data={liveData?.curDate} child={dateView} />
+    </LiveComponent>
   );
+}
+
+function dateView(data: number) {
+  return <div>{data}</div>;
 }
 
 // export default Register;

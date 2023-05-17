@@ -1,14 +1,26 @@
 /**
  * Author: Meng
  * Date: 2023-05-16
- * Desc: 
+ * Desc:
  */
-import React from 'react';
+import React from "react";
+import { LiveComponent, HooksWidget } from "hooks-widget";
+import HeaderBar from "../../../components/header/HeaderBar";
+import HomeLiveData from "./HomeLiveData";
+import "./Home.scss";
 
-export function HomePage() {
+let liveData: HomeLiveData | null = null;
+
+export function HomePage(props: any) {
+  liveData = new HomeLiveData(props);
   return (
-    <div className="page home">
-      <h1>这是首页</h1>
-    </div>
+    <LiveComponent liveData={liveData}>
+      <HeaderBar />
+      <HooksWidget data={liveData?.curDate} child={dateView} />
+    </LiveComponent>
   );
+}
+
+function dateView(data: number) {
+  return <div>{data}</div>;
 }

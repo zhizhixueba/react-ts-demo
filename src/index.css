@@ -14,6 +14,33 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 } */
 
+input {
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+input:focus {
+  border: none;
+  border-radius: 6px;
+  padding: 0 8px;
+  outline: none;
+  /* outline: solid 1px rgba(0, 0, 0, 0.3); */
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -22,4 +49,16 @@ body {
 .root-box {
   z-index: 997;
   position: fixed;
+}
+
+.button {
+  user-select: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.button:active {
+  opacity: 0.9;
+  transform: scale(0.99, 0.99);
 }

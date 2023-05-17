@@ -5,11 +5,10 @@
  */
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
 
-import "./index.css";
-import routers from "./pages/routers";
 import reportWebVitals from "./reportWebVitals";
+import App from "./App";
+import "./index.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -17,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <div className="root-box" id="base"></div>
-    <RouterProvider router={routers} />
+    <App />
   </React.StrictMode>
 );
 

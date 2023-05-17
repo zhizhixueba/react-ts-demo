@@ -4,13 +4,21 @@
  * Desc: 
  */
 import React from 'react';
+import { LiveComponent, HooksWidget } from "hooks-widget";
+import LoginLiveData from "./LoginLiveData";
 
-export function LoginPage() {
+
+let liveData: LoginLiveData | null = null;
+
+export function LoginPage(props: any) {
+  liveData = new LoginLiveData(props);
   return (
-    <div className="login">
-      <h1>登录</h1>
-    </div>
+    <LiveComponent liveData={liveData}>
+      <HooksWidget data={liveData?.curDate} child={dateView} />
+    </LiveComponent>
   );
 }
 
-// export default Login;
+function dateView(data: number) {
+  return <div>{data}</div>;
+}

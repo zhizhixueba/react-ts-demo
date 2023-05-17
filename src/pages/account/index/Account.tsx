@@ -5,12 +5,10 @@
  */
 import React from 'react';
 
-function Account() {
+export function Account() {
   return (
-    <div className="App">
+    <div className="account">
       <h1>账号</h1>
     </div>
   );
 }
-
-export default Account;

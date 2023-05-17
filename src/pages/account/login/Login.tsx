@@ -5,12 +5,12 @@
  */
 import React from 'react';
 
-function Contact() {
+export function Login() {
   return (
-    <div className="App">
-      <h1>dengchu1</h1>
+    <div className="login">
+      <h1>登录</h1>
     </div>
   );
 }
 
-export default Contact;
+// export default Login;

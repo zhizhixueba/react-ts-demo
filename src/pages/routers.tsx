@@ -6,13 +6,11 @@
  */
 import { createBrowserRouter } from "react-router-dom";
 
-import App from "./App";
-import Login from "./pages/account/Login";
-import Logout from "./pages/account/Logout";
-import Account from "./pages/column/Account";
-import Contact from "./pages/column/Contact";
-import Dashboard from "./pages/column/Dashboard";
-import NotFound from "./pages/column/NotFound";
+import App from "../App";
+import {Login, Register, Account} from "./index";
+import Contact from "./column/Contact";
+import Dashboard from "./column/Dashboard";
+import NotFound from "./column/NotFound";
 
 const routers = createBrowserRouter([
   {
@@ -41,7 +39,7 @@ const routers = createBrowserRouter([
       },
       {
         path: "logout",
-        element: <Logout />,
+        element: <Register />,
       },
     ],
   },

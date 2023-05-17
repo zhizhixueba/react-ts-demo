@@ -5,11 +5,11 @@
  */
 import React from 'react';
 
-function Contact() {
+function Dashboard() {
   return (
-    <div className="App">
+    <div className="dashboard">
     </div>
   );
 }
 
-export default Contact;
+export default Dashboard;

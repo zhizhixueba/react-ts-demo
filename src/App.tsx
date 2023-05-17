@@ -13,7 +13,6 @@ function App(props: any) {
   liveData = new AppLiveData(props);
   return (
     <LiveComponent liveData={liveData}>
-      <h1>sdfsdsads</h1>
       <HooksWidget data={liveData?.curDate} child={dateView} />
     </LiveComponent>
   );

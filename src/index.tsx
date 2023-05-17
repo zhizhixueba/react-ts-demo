@@ -8,7 +8,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 
 import "./index.css";
-import routers from "./routers";
+import routers from "./pages/routers";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div className="root-box" id="app"></div>
+    <div className="root-box" id="base"></div>
     <RouterProvider router={routers} />
   </React.StrictMode>
 );

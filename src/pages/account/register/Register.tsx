@@ -5,12 +5,12 @@
  */
 import React from 'react';
 
-function Contact() {
+export function Register() {
   return (
-    <div className="App">
-      <h1>登录</h1>
+    <div className="register">
+      <h1>dengchu1</h1>
     </div>
   );
 }
 
-export default Contact;
+// export default Register;

@@ -1,0 +1,27 @@
+.menubar {
+  min-width: 230px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-right: solid 1px #efefef;
+
+  .list {
+    margin-left: 12px;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+  }
+  .value {
+    color: #323232;
+    font-size: 14px;
+    line-height: 40px;
+  }
+  .value2 {
+    color: #323232;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+  }
+}

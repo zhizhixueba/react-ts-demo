@@ -46,24 +46,23 @@ export function HomePage(props: any) {
       name: "测试3",
       select: false,
       children: [
-        { name: "二级菜单7", select: false },
-        { name: "二级菜单8", select: false },
-        { name: "二级菜单9", select: false },
-      ],
-    },
-    {
-      name: "测试4",
-      select: false,
-      children: [
         { name: "二级菜单0", select: false },
         { name: "二级菜单10", select: false },
         {
           name: "二级菜单11",
           select: false,
           children: [
-            { name: "二级菜单112", select: false },
-            { name: "二级菜单113", select: false },
-            { name: "二级菜单114", select: false },
+            { name: "二级菜单101", select: false },
+            { name: "二级菜单102", select: false },
+            {
+              name: "二级菜单103",
+              select: false,
+              children: [
+                { name: "二级菜单1001", select: false },
+                { name: "二级菜单1002", select: false },
+                { name: "二级菜单1003", select: false },
+              ],
+            },
           ],
         },
       ],

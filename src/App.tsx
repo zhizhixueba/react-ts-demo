@@ -19,8 +19,10 @@ function App(props: any) {
   liveData = new AppLiveData(props);
   return (
     <LiveComponent liveData={liveData}>
-      <HeaderBar />
-      <RouterProvider router={routers}/>
+      <div className="App">
+        <HeaderBar />
+        <RouterProvider router={routers}/>
+      </div>
     </LiveComponent>
   );
 }

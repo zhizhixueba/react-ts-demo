@@ -7789,10 +7789,10 @@ renderkid@^3.0.0:
     lodash "^4.17.21"
     strip-ansi "^6.0.1"
 
-request-no@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/request-no/-/request-no-0.0.6.tgz#f1ec3135897b132daa2473bb4d1f9ebc9fe7a54e"
-  integrity sha512-K4E0sz3/965/v6PCMC+d+MQtl2CGf3AW2iCC+4WUW+C/hJFF0oscfKbYd/g4bF91hWByVISDX/T27S3pUYj5Iw==
+request-no@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/request-no/-/request-no-0.0.7.tgz#a6b2b928d41b2f3e102ebf4a798effd981462105"
+  integrity sha512-AYGS968xRUfT82zgpioOHv7+CzZmXxapQbknxlbGnQiut5+H++suyxk/mxpwAhOpnsU6IYRffDlUgEw8EW85cQ==
 
 require-directory@^2.1.1:
   version "2.1.1"

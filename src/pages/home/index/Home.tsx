@@ -22,7 +22,9 @@ export function HomePage(props: any) {
   liveData = new HomeLiveData(props);
   return (
     <LiveComponent liveData={liveData}>
-      <HooksWidget data={liveData?.curDate} child={dateView} />
+      <div className="home">
+        <HooksWidget data={liveData?.curDate} child={dateView} />
+      </div>
     </LiveComponent>
   );
 }

@@ -31,11 +31,11 @@ export function HomePage(props: any) {
       children: [
         {
           name: "二级菜单4",
-          select: false,
+          select: true,
           children: [
-            { name: "二级菜单11", select: false },
-            { name: "二级菜单12", select: false },
-            { name: "二级菜单13", select: false },
+            { name: "二级菜单41", select: false },
+            { name: "二级菜单42", select: false },
+            { name: "二级菜单43", select: false },
           ],
         },
         { name: "二级菜单5", select: false },
@@ -46,16 +46,16 @@ export function HomePage(props: any) {
       name: "测试3",
       select: false,
       children: [
-        { name: "二级菜单0", select: false },
-        { name: "二级菜单10", select: false },
+        { name: "二级菜单7", select: false },
+        { name: "二级菜单8", select: false },
         {
-          name: "二级菜单11",
+          name: "二级菜单9",
           select: false,
           children: [
-            { name: "二级菜单101", select: false },
-            { name: "二级菜单102", select: false },
+            { name: "二级菜单901", select: false },
+            { name: "二级菜单902", select: false },
             {
-              name: "二级菜单103",
+              name: "二级菜单903",
               select: false,
               children: [
                 { name: "二级菜单1001", select: false },

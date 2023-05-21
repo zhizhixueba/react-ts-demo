@@ -4,41 +4,73 @@
  * Desc:
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import "./Menubar.scss";
-import { escape } from "querystring";
 
 type MenuItem = {
   id: number;
   name: string;
-  tag: string;
+  tag?: string;
   select: boolean;
+  parents?: Array<number>;
   children?: Array<MenuItem>;
 };
 
-const Menubar = (props: any) => {
-  const [items, setItems] = useState(props.items || []);
-  
-  useEffect(() => {}, props.items);
+interface MenuProps {
+  items: Array<MenuItem>;
+  onChange?: (item: MenuItem) => void;
+}
 
-  function resetItem(items: Array<MenuItem>, item: MenuItem) {
-    items.forEach((e: MenuItem) => {
-      const childs = e.children||[];
-      const tagItem = childs.find(tag => tag == item);
-      if(tagItem) {
-        // e.select = false;
-        childs.forEach(obj => obj.select = false);
-      }else {
-        resetItem(childs, item);
+const Menubar = (props: Readonly<MenuProps>) => {
+  const lastIdxs = useRef<Array<number>>([]);
+  const [items, setItems] = useState(props.items || []);
+
+  useEffect(() => {
+    initItems(items);
+  }, props.items);
+
+  function initItems(list?: Array<MenuItem>, idxs?: Array<number>) {
+    if (list) {
+      list.forEach((item: MenuItem, index: number) => {
+        const parents = (idxs || []).concat([index]);
+        item.parents = parents;
+        if (item.children) {
+          initItems(item.children, parents);
+        }
+      });
+    }
+  }
+
+  function resetItems(
+    reset: boolean,
+    list?: Array<MenuItem>,
+    idxs?: Array<number>
+  ) {
+    if (list && idxs && idxs.length > 0) {
+      const item = list[idxs[0]];
+      const level = idxs.length;
+      if (reset) {
+        item.select = false;
+      } else {
+        item.select = level > 1 ? true : !item.select;
       }
-    });
+      resetItems(
+        reset,
+        item.children,
+        idxs.filter((_, idx) => idx > 0)
+      );
+    }
   }
 
   function onItemTab(item: MenuItem) {
-    resetItem(items, item);
-    item.select = !item.select;
-    setItems([].concat(items));
+    console.log(lastIdxs.current, item.parents);
+    if (item.parents != lastIdxs.current) {
+      resetItems(true, items, lastIdxs.current);
+    }
+    resetItems(false, items, item.parents);
+    lastIdxs.current = item.parents || [];
+    setItems(items.concat([]));
   }
 
   function itemView(item: MenuItem) {
@@ -51,7 +83,7 @@ const Menubar = (props: any) => {
     }
 
     return (
-      <li className="item">
+      <li key={item.name} className="item">
         <span className={labelStyle} onClick={() => onItemTab(item)}>
           {item.name}
         </span>

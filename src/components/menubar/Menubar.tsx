@@ -64,11 +64,13 @@ const Menubar = (props: Readonly<MenuProps>) => {
   }
 
   function onItemTab(item: MenuItem) {
-    console.log(lastIdxs.current, item.parents);
-    if (item.parents != lastIdxs.current) {
-      resetItems(true, items, lastIdxs.current);
+    let lastArr = lastIdxs.current;
+    let curArr = item.parents;
+
+    if (curArr != lastArr) {
+      resetItems(true, items, lastArr);
     }
-    resetItems(false, items, item.parents);
+    resetItems(false, items, curArr);
     lastIdxs.current = item.parents || [];
     setItems(items.concat([]));
   }

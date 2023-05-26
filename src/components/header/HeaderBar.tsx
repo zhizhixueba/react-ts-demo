@@ -4,7 +4,7 @@
  * Desc: 标题栏
  */
 
-// import React from "react";
+import React, {useState} from "react";
 
 import Images from "../../assets/index";
 import "./HeaderBar.scss";
@@ -12,7 +12,7 @@ import "./HeaderBar.scss";
 type TabObj = { id: number; name: string; select: boolean };
 
 const tab_list: TabObj[] = [
-  { id: 0, name: "音乐", select: false },
+  { id: 0, name: "音乐", select: true },
   { id: 1, name: "建模", select: false },
   { id: 2, name: "编程", select: false },
   { id: 3, name: "移动端", select: false },
@@ -23,15 +23,26 @@ const tab_list: TabObj[] = [
 
 function HeaderBar(props: any) {
 
+  const [tabList, setTabList] = useState(tab_list.concat([]));
+
+  function onPressItem(item: TabObj) {
+    tabList.forEach(e => {
+      e.select = false;
+    })
+    item.select = true;
+    setTabList(tabList.concat([]))
+  }
+
   function tabView(item: TabObj) {
-    return <span key={item.id} className="button tab">{item.name}</span>;
+    const cla = item.select ? 'button tab tab-no':'button tab';
+    return <span key={item.id} className={cla} onClick={() => onPressItem(item)}>{item.name}</span>;
   }
 
   return (
     <div className="header">
       <img className="button logo" src={Images.logo}/>
       <div className="flex" />
-      {tab_list.map(tabView)}
+      {tabList.map(tabView)}
     </div>
   );
 }

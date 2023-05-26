@@ -9,7 +9,9 @@ type Consts = {
 };
 
 const constants: Consts = {
-  menuList: [],
+  menuList: [
+    {},
+  ],
 }
 
 export default constants;

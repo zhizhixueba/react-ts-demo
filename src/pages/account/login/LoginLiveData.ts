@@ -4,13 +4,12 @@
  * Desc: 
  */
 
-import { LiveData, Observer } from "hooks-widget";
+import { LiveData, Binder } from "hooks-widget";
 
 export default class LoginLiveData extends LiveData {
-  public curDate = new Observer<number>(Date.now());
+  public curDate = new Binder<number>(Date.now());
 
   onLoad() {
-    console.log("----------->", this.props);
   }
 
 }

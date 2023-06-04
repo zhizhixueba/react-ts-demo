@@ -85,5 +85,5 @@ export function HomePage(props: any) {
 }
 
 function dateView(data: number) {
-  return <div>{data}</div>;
+  return <div onClick={liveData?.onUpdateDate}>{data}</div>;
 }

@@ -4,13 +4,19 @@
  * Desc: 
  */
 
-import { LiveData, Observer } from "hooks-widget";
+import { LiveData, Binder } from "hooks-widget";
 
 export default class HomeLiveData extends LiveData {
-  public curDate = new Observer<number>(Date.now());
+  public curDate = new Binder<number>(Date.now());
 
   onLoad() {
-    console.log("----------->", this.props);
+    
   }
 
+
+  onUpdateDate = () => {
+    // const screen = window.app_bridge.screenSize()
+    // console.log(screen)
+    // alert(screen)
+  }
 }

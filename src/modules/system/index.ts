@@ -7,5 +7,6 @@
 interface Window {
   showOpenFilePicker: (res: any) => Promise<any>;
   // showOpenFolderPicker: (res: any) => Promise<any>;
+  app_bridge: any
 }
 // }

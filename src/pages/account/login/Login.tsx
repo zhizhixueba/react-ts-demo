@@ -5,16 +5,16 @@
  */
 import React from 'react';
 import { LiveComponent, HooksWidget } from "hooks-widget";
-import LoginLiveData from "./LoginLiveData";
+import LoginLiveModel from "./LoginLiveModel";
 
 
-let liveData: LoginLiveData | null = null;
+let liveModel: LoginLiveModel | null = null;
 
 export function LoginPage(props: any) {
-  liveData = new LoginLiveData(props);
+  liveModel = new LoginLiveModel(props);
   return (
-    <LiveComponent liveData={liveData}>
-      <HooksWidget data={liveData?.curDate} child={dateView} />
+    <LiveComponent liveModel={liveModel}>
+      <HooksWidget data={liveModel?.curDate} child={dateView} />
     </LiveComponent>
   );
 }

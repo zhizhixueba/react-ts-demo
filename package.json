@@ -1,7 +1,7 @@
 {
   "name": "my-react",
   "version": "0.0.1",
-  "description": "a react project",
+  "description": "A react project",
   "author": "Meng",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "hooks-widget": "^0.0.12",
+    "hooks-widget": "^0.0.16",
     "node-sass": "npm:dart-sass",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

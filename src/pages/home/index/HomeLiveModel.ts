@@ -4,10 +4,10 @@
  * Desc: 
  */
 
-import { LiveData, Binder } from "hooks-widget";
+import { LiveData, LiveModel } from "hooks-widget";
 
-export default class HomeLiveData extends LiveData {
-  public curDate = new Binder<number>(Date.now());
+export default class HomeLiveModel extends LiveModel {
+  public curDate = new LiveData<number>(Date.now());
 
   onLoad() {
     
@@ -15,6 +15,7 @@ export default class HomeLiveData extends LiveData {
 
 
   onUpdateDate = () => {
+    this.curDate.update(Date.now());
     // const screen = window.app_bridge.screenSize()
     // console.log(screen)
     // alert(screen)

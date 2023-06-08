@@ -6,16 +6,16 @@
  */
 import React from 'react';
 import { LiveComponent, HooksWidget } from "hooks-widget";
-import ProgramLiveData from "./ProgramLiveData";
+import ProgramLiveModel from "./ProgramLiveModel";
 
 
-let liveData: ProgramLiveData | null = null;
+let liveModel: ProgramLiveModel | null = null;
 
 export function ProgramPage(props: any) {
-  liveData = new ProgramLiveData(props);
+  liveModel = new ProgramLiveModel(props);
   return (
-    <LiveComponent liveData={liveData}>
-      <HooksWidget data={liveData?.curDate} child={dateView} />
+    <LiveComponent liveModel={liveModel}>
+      <HooksWidget data={liveModel?.curDate} child={dateView} />
     </LiveComponent>
   );
 }

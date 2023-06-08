@@ -10,15 +10,15 @@ import { LiveComponent } from "hooks-widget";
 import HeaderBar from "./components/header/HeaderBar";
 import routers from "./pages/routers";
 
-import AppLiveData from "./AppLiveData";
+import AppLiveModel from "./AppLiveModel";
 import "./App.css";
 
-let liveData: AppLiveData | null = null;
+let liveModel: AppLiveModel | null = null;
 function App(props: any) {
 
-  liveData = new AppLiveData(props);
+  liveModel = new AppLiveModel(props);
   return (
-    <LiveComponent liveData={liveData}>
+    <LiveComponent liveModel={liveModel}>
       <div className="App">
         <HeaderBar />
         <RouterProvider router={routers}/>

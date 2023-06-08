@@ -5,15 +5,15 @@
  */
 import React from "react";
 import { LiveComponent, HooksWidget } from "hooks-widget";
-import DetailLiveData from "./DetailLiveData";
+import DetailLiveModel from "./DetailLiveModel";
 
-let liveData: DetailLiveData | null = null;
+let liveModel: DetailLiveModel | null = null;
 
 export function DetailPage(props: any) {
-  liveData = new DetailLiveData(props);
+  liveModel = new DetailLiveModel(props);
   return (
-    <LiveComponent liveData={liveData}>
-      <HooksWidget data={liveData?.curDate} child={dateView} />
+    <LiveComponent liveModel={liveModel}>
+      <HooksWidget data={liveModel?.curDate} child={dateView} />
     </LiveComponent>
   );
 }

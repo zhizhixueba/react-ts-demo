@@ -5,16 +5,16 @@
  */
 import React from 'react';
 import { LiveComponent, HooksWidget } from "hooks-widget";
-import RegisterLiveData from "./RegisterLiveData";
+import RegisterLiveModel from "./RegisterLiveModel";
 
 
-let liveData: RegisterLiveData | null = null;
+let liveModel: RegisterLiveModel | null = null;
 
 export function RegisterPage(props: any) {
-  liveData = new RegisterLiveData(props);
+  liveModel = new RegisterLiveModel(props);
   return (
-    <LiveComponent liveData={liveData}>
-      <HooksWidget data={liveData?.curDate} child={dateView} />
+    <LiveComponent liveModel={liveModel}>
+      <HooksWidget data={liveModel?.curDate} child={dateView} />
     </LiveComponent>
   );
 }

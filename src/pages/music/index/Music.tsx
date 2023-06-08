@@ -6,16 +6,16 @@
  */
 import React from 'react';
 import { LiveComponent, HooksWidget } from "hooks-widget";
-import MusicLiveData from "./MusicLiveData";
+import MusicLiveModel from "./MusicLiveModel";
 
 
-let liveData: MusicLiveData | null = null;
+let liveModel: MusicLiveModel | null = null;
 
 export function MusicPage(props: any) {
-  liveData = new MusicLiveData(props);
+  liveModel = new MusicLiveModel(props);
   return (
-    <LiveComponent liveData={liveData}>
-      <HooksWidget data={liveData?.curDate} child={dateView} />
+    <LiveComponent liveModel={liveModel}>
+      <HooksWidget data={liveModel?.curDate} child={dateView} />
     </LiveComponent>
   );
 }

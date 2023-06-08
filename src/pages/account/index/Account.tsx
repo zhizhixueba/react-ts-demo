@@ -6,16 +6,15 @@
  */
 import React from 'react';
 import { LiveComponent, HooksWidget } from "hooks-widget";
-import AccountLiveData from "./AccountLiveData";
+import AccountLiveModel from "./AccountLiveModel";
 
-
-let liveData: AccountLiveData | null = null;
+let liveModel: AccountLiveModel | null = null;
 
 export function AccountPage(props: any) {
-  liveData = new AccountLiveData(props);
+  liveModel = new AccountLiveModel(props);
   return (
-    <LiveComponent liveData={liveData}>
-      <HooksWidget data={liveData?.curDate} child={dateView} />
+    <LiveComponent liveModel={liveModel}>
+      <HooksWidget data={liveModel?.curDate} child={dateView} />
     </LiveComponent>
   );
 }

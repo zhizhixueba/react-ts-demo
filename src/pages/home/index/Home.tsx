@@ -8,10 +8,10 @@ import { useLocation } from "react-router-dom";
 import { LiveComponent, HooksWidget } from "hooks-widget";
 import { Menubar } from "../../../components/index";
 
-import HomeLiveData from "./HomeLiveData";
+import HomeLiveModel from "./HomeLiveModel";
 import "./Home.scss";
 
-let liveData: HomeLiveData | null = null;
+let liveData: HomeLiveModel | null = null;
 
 export function HomePage(props: any) {
   let location = useLocation();
@@ -73,9 +73,9 @@ export function HomePage(props: any) {
     console.log("------> ", location);
   }, [location]);
 
-  liveData = new HomeLiveData(props);
+  liveData = new HomeLiveModel(props);
   return (
-    <LiveComponent liveData={liveData}>
+    <LiveComponent liveModel={liveData}>
       <div className="home">
         <Menubar items={menuList} />
         <HooksWidget data={liveData?.curDate} child={dateView} />
